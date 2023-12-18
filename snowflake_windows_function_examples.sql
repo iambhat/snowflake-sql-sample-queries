@@ -1,7 +1,6 @@
 
 -- ROW_NUMBER() Function:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -12,8 +11,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- RANK() Function:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -24,8 +22,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- DENSE_RANK() Function:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -36,8 +33,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- NTILE() Function:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -48,8 +44,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- LEAD() and LAG() Functions:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -62,8 +57,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- SUM() Over a Window:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
@@ -75,8 +69,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- AVG() Over a Window:
-sql
-Copy code
+
 SELECT 
     employee_id, 
     first_name, 
