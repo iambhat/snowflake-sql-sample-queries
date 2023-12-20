@@ -52,9 +52,7 @@ FROM @stage_location/json_file.json;
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 -- Use Case 2: Querying JSON data
-
 -- Let's say you want to query the JSON data stored in the table created earlier.
-
 -- To retrieve the name and email of users:
 
 SELECT
@@ -79,7 +77,6 @@ FROM json_data_table;
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 -- Use Case 3: Extracting Nested JSON Data
-
 -- Suppose you want to create a table that flattens out the nested JSON data for better querying:
 
 CREATE OR REPLACE TABLE flattened_data AS
@@ -100,7 +97,6 @@ FROM json_data_table,
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 -- Use Case 4: Filtering JSON Data
-
 -- If you want to filter based on JSON content:
 
 SELECT *
