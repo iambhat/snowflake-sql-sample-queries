@@ -1,6 +1,5 @@
 
 -- Use Case 1: Parsing JSON data and creating a table
-
 -- Suppose you have a JSON file with data like this:
 
 /*json
@@ -40,7 +39,6 @@ CREATE OR REPLACE TABLE json_data_table (
 
 
 -- To load the JSON data into the table:
-
 
 INSERT INTO json_data_table
 SELECT
