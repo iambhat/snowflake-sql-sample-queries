@@ -1,5 +1,6 @@
 
 -- ROW_NUMBER() Function:
+-- Returns a unique row number for each row within a window partition. The row number starts at 1 and continues up sequentially.
 
 SELECT 
     employee_id, 
@@ -11,6 +12,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- RANK() Function:
+-- Returns the rank of a value within an ordered group of values. The rank value starts at 1 and continues up sequentially. If two values are the same, they have the same rank.
 
 SELECT 
     employee_id, 
@@ -22,6 +24,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- DENSE_RANK() Function:
+-- Returns the rank of a value within a group of values, without gaps in the ranks. The rank value starts at 1 and continues up sequentially. If two values are the same, they have the same rank.
 
 SELECT 
     employee_id, 
@@ -33,6 +36,7 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- NTILE() Function:
+-- Divides an ordered data set equally into the number of buckets specified by constant_value. Buckets are sequentially numbered 1 through constant_value.
 
 SELECT 
     employee_id, 
