@@ -48,6 +48,8 @@ FROM employees;
 ---------------------------------------------------------------------------------------------------------------------------
 
 -- LEAD() and LAG() Functions:
+-- The LEAD and LAG functions are window functions that return the value of an expression on a row.
+-- The LEAD function returns the value of an expression on the row after the current one, while the LAG function returns the value of an expression on the row before the current one.
 
 SELECT 
     employee_id, 
