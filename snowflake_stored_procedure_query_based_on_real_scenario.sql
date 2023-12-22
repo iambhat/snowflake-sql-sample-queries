@@ -62,7 +62,13 @@
    - Example: `CALL ProcessOrder(12345, 'paid');`
 
 7. Benefits:
-   - **Automation**: Reduces manual intervention, ensuring consistent order processing.
-   - **Maintaining Integrity**: Updates status and inventory atomically, avoiding inconsistencies.
-   - **Auditing**: Logs changes made to orders for auditing and traceability.
+   - Automation: 
+     - Reduces manual intervention, ensuring consistent order processing.
+	 
+   - Maintaining Integrity:
+     - Updates status and inventory atomically, avoiding inconsistencies.
+	 
+   - Auditing:
+     - Logs changes made to orders for auditing and traceability.
+	 
 */
