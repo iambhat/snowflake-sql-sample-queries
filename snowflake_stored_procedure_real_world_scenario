@@ -1,0 +1,69 @@
+*Use Case: Data Cleansing and Deduplication**
+
+Suppose you're working for a healthcare organization that manages patient data in a Snowflake database. Over time, the database accumulates duplicate patient records due to various data entry errors or system glitches. To ensure data accuracy and integrity, you aim to create a stored procedure that cleanses and deduplicates the patient records.
+
+1. **Objective**: Develop a stored procedure named `CleansePatientData` to identify and merge duplicate patient records while maintaining data consistency.
+
+2. **Stored Procedure Creation**:
+   - Create a stored procedure `CleansePatientData` that identifies and merges duplicate patient records based on matching criteria like name, date of birth, and address.
+
+3. **Procedure Logic**:
+   - Upon invoking the `CleansePatientData` procedure, it begins the deduplication process.
+   - It identifies potential duplicate records by comparing patient details (e.g., name, date of birth, address) in the `Patients` table.
+   - Algorithmically determine similarity thresholds for merging records (e.g., fuzzy matching on names, exact matching on date of birth).
+
+4. **Actions**:
+   - Merge identified duplicate patient records, updating references in related tables (e.g., medical history, appointments) to maintain data consistency.
+   - Log the merged records and any potential data conflicts or issues encountered during the deduplication process for review.
+
+5. **Sample Stored Procedure Code** (Note: This code is conceptual and may require adjustments based on specific business logic and data structure):
+
+   ```sql
+   CREATE OR REPLACE PROCEDURE CleansePatientData()
+   RETURNS STRING
+   LANGUAGE SQL
+   AS
+   $$
+   DECLARE
+     merged_records INT;
+   BEGIN
+     merged_records := 0;
+     
+     -- Identify potential duplicate patient records
+     FOR patient_rec IN (
+       SELECT p1.patient_id AS patient_id_1, p2.patient_id AS patient_id_2
+       FROM Patients p1
+       JOIN Patients p2 ON p1.name = p2.name
+                         AND p1.date_of_birth = p2.date_of_birth
+                         AND p1.address = p2.address
+                         AND p1.patient_id <> p2.patient_id
+     ) DO
+       -- Merge duplicate records and update related tables
+       UPDATE MedicalHistory
+       SET patient_id = patient_rec.patient_id_1
+       WHERE patient_id = patient_rec.patient_id_2;
+       
+       -- Perform similar updates for other related tables if applicable
+       
+       -- Delete duplicate patient record
+       DELETE FROM Patients WHERE patient_id = patient_rec.patient_id_2;
+       
+       merged_records := merged_records + 1;
+     END FOR;
+     
+     RETURN 'Deduplication process completed. Merged ' || merged_records || ' duplicate records.';
+   EXCEPTION
+     WHEN OTHERS THEN
+       RETURN 'Error encountered during data deduplication: ' || ERROR_MESSAGE();
+   END;
+   $$;
+   ```
+
+6. **Execution**:
+   - To initiate the data cleansing and deduplication process, call the stored procedure `CleansePatientData`.
+   - Example: `CALL CleansePatientData();`
+
+7. **Benefits**:
+   - **Data Integrity**: Ensures accurate patient records by removing duplicates.
+   - **Efficiency**: Automates the deduplication process, saving time and effort.
+   - **Error Handling**: Provides logs for potential conflicts or issues encountered during deduplication.
