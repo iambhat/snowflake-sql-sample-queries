@@ -1,7 +1,9 @@
 /*
 Use Case: Data Cleansing and Deduplication
 
-Suppose you're working for a healthcare organization that manages patient data in a Snowflake database. Over time, the database accumulates duplicate patient records due to various data entry errors or system glitches. To ensure data accuracy and integrity, you aim to create a stored procedure that cleanses and deduplicates the patient records.
+Suppose you're working for a healthcare organization that manages patient data in a Snowflake database. 
+Over time, the database accumulates duplicate patient records due to various data entry errors or system glitches. 
+To ensure data accuracy and integrity, you aim to create a stored procedure that cleanses and deduplicates the patient records.
 
 1. Objective: Develop a stored procedure named `CleansePatientData` to identify and merge duplicate patient records while maintaining data consistency.
 
@@ -65,7 +67,10 @@ Suppose you're working for a healthcare organization that manages patient data i
    - Example: `CALL CleansePatientData();`
 
 7. Benefits:
-   - **Data Integrity**: Ensures accurate patient records by removing duplicates.
-   - **Efficiency**: Automates the deduplication process, saving time and effort.
-   - **Error Handling**: Provides logs for potential conflicts or issues encountered during deduplication.
+   - Data Integrity: 
+       Ensures accurate patient records by removing duplicates.
+   - Efficiency:
+       Automates the deduplication process, saving time and effort.
+   - Error Handling:
+      Provides logs for potential conflicts or issues encountered during deduplication.
 */
