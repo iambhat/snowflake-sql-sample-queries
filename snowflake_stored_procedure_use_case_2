@@ -23,27 +23,27 @@ To streamline this process and improve efficiency, you decide to create a stored
 5. Sample Stored Procedure Code:
 */
 
-   CREATE OR REPLACE PROCEDURE GenerateWeeklySalesReport(start_date DATE, end_date DATE, region VARCHAR)
-   RETURNS STRING
-   LANGUAGE SQL
-   AS
-   $$
-   BEGIN
-     INSERT INTO SalesReports (report_date, region, total_sales)
-     SELECT DATE_TRUNC('week', sales_date) AS week_start_date,
-            :region AS region,
-            SUM(sales_amount) AS total_sales
-     FROM Sales
-     WHERE sales_date BETWEEN :start_date AND :end_date
-       AND region = :region
-     GROUP BY week_start_date, region;
-     
-     RETURN 'Weekly sales report generated successfully for ' || :region || '.';
-   EXCEPTION
-     WHEN OTHERS THEN
-       RETURN 'Error generating the weekly sales report for ' || :region || ': ' || ERROR_MESSAGE();
-   END;
-   $$;
+CREATE OR REPLACE PROCEDURE GenerateWeeklySalesReport(start_date DATE, end_date DATE, region VARCHAR)
+RETURNS STRING
+LANGUAGE SQL
+AS
+$$
+BEGIN
+  INSERT INTO SalesReports (report_date, region, total_sales)
+  SELECT DATE_TRUNC('week', sales_date) AS week_start_date,
+         :region AS region,
+         SUM(sales_amount) AS total_sales
+  FROM Sales
+  WHERE sales_date BETWEEN :start_date AND :end_date
+    AND region = :region
+  GROUP BY week_start_date, region;
+  
+  RETURN 'Weekly sales report generated successfully for ' || :region || '.';
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN 'Error generating the weekly sales report for ' || :region || ': ' || ERROR_MESSAGE();
+END;
+$$;
 
 /*
 6. Execution:
