@@ -51,7 +51,7 @@ To streamline this process and improve efficiency, you decide to create a stored
    - Example: `CALL GenerateWeeklySalesReport('2023-12-01', '2023-12-07', 'North America');`
 
 7. Benefits:
-   - **Efficiency**: Automates the process of generating weekly sales reports, saving time and effort.
-   - **Consistency**: Ensures consistent report formatting and data aggregation.
-   - **Scalability**: Easily scalable to generate reports for different regions and time frames.
+   - Efficiency: Automates the process of generating weekly sales reports, saving time and effort.
+   - Consistency: Ensures consistent report formatting and data aggregation.
+   - Scalability: Easily scalable to generate reports for different regions and time frames.
 */
