@@ -1,4 +1,4 @@
-Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzing data within a specific window or partition. Here are some use cases demonstrating the usage of `LEAD` and `LAG` functions in Snowflake SQL queries:
+Snowflake supports window functions like `LEAD` and `LAG` for analyzing data within a specific window or partition. Here are some use cases demonstrating the usage of `LEAD` and `LAG` functions in Snowflake SQL queries:
 
 1. Comparing Values in Sequential Rows
    
