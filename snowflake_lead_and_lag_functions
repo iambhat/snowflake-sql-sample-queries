@@ -1,6 +1,6 @@
 Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzing data within a specific window or partition. Here are some use cases demonstrating the usage of `LEAD` and `LAG` functions in Snowflake SQL queries:
 
-1. **Comparing Values in Sequential Rows**
+1. Comparing Values in Sequential Rows
    
    Assume you have a table named `sales_data` with columns `sale_date` and `revenue`. You want to compare the revenue of the current row with the revenue of the next row using `LEAD` function.
 
@@ -15,7 +15,7 @@ Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzi
        sale_date;
    ```
 
-2. **Calculating the Difference Between Current and Previous Values**
+2. Calculating the Difference Between Current and Previous Values
    
    If you want to find the difference in revenue between the current row and the previous row using `LAG` function:
 
@@ -31,7 +31,7 @@ Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzi
        sale_date;
    ```
 
-3. **Handling Partitions - Calculate Difference per Group**
+3. Handling Partitions - Calculate Difference per Group
 
    For partitioned data, say you want to find the difference in revenue between the current row and the previous row within each product category:
 
@@ -48,7 +48,7 @@ Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzi
        product_category, sale_date;
    ```
 
-4. **Predicting Future Values**
+4. Predicting Future Values
 
    Suppose you want to forecast sales revenue by comparing the current revenue with the future revenue using `LEAD` function:
 
@@ -63,7 +63,7 @@ Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzi
        sale_date;
    ```
 
-5. **Using Default Values with LEAD or LAG**
+5. Using Default Values with LEAD or LAG
 
    You can specify default values for the `LEAD` or `LAG` functions, especially helpful for handling NULLs:
 
@@ -77,5 +77,3 @@ Certainly! Snowflake supports window functions like `LEAD` and `LAG` for analyzi
    ORDER BY 
        sale_date;
    ```
-
-These examples illustrate how you can use `LEAD` and `LAG` functions in Snowflake SQL queries for various analytical scenarios involving data sequencing, comparison, and forecasting within windows or partitions. Adjust the columns and tables according to your specific data structure and requirements.
